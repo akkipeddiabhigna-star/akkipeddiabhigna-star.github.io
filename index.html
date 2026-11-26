@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhigna Sharma Akkipeddi | Data Scientist</title>
+<meta name="description" content="Data scientist with 6 years at D.E. Shaw in forecasting, data pipelines and market intelligence. MS Business Analytics, UC San Diego.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --slate:#3b4a6b;        /* slate blue */
+    --slate-dark:#26324a;
+    --slate-soft:#e8ecf4;
+    --silver:#c3c9d4;
+    --silver-light:#f4f5f8;
+    --ink:#1d2433;
+    --muted:#5c6577;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--silver-light);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(244,245,248,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--silver)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  nav .brand{font-weight:700;letter-spacing:.02em;color:var(--slate-dark);text-decoration:none}
+  nav ul{display:flex;gap:24px;list-style:none}
+  nav ul a{text-decoration:none;color:var(--muted);font-size:.92rem;font-weight:500}
+  nav ul a:hover{color:var(--slate)}
+
+  /* Hero */
+  header.hero{background:linear-gradient(135deg,var(--slate-dark),var(--slate));color:var(--white);padding:88px 0 72px}
+  .hero h1{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(2.2rem,5vw,3.3rem);line-height:1.15;margin-bottom:10px}
+  .hero .tag{color:var(--silver);font-size:1.1rem;font-weight:500;margin-bottom:22px}
+  .hero p.summary{max-width:640px;font-size:1.05rem;color:#dfe4ee}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{display:inline-block;padding:10px 20px;border-radius:8px;font-weight:600;font-size:.93rem;text-decoration:none;transition:transform .15s,background .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:var(--white);color:var(--slate-dark)}
+  .btn.ghost{border:1px solid var(--silver);color:var(--white)}
+  .btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+  /* Stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-36px}
+  .stat{background:var(--white);border:1px solid var(--silver);border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(38,50,74,.07)}
+  .stat b{display:block;font-size:1.6rem;color:var(--slate);line-height:1.2}
+  .stat span{font-size:.86rem;color:var(--muted)}
+
+  /* Sections */
+  section{padding:72px 0 8px}
+  h2{font-family:"Source Serif 4",Georgia,serif;font-size:1.8rem;color:var(--slate-dark);margin-bottom:8px}
+  .lede{color:var(--muted);margin-bottom:32px}
+
+  /* Cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+  .card{background:var(--white);border:1px solid var(--silver);border-radius:12px;padding:24px;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+  .card:hover{box-shadow:0 10px 26px rgba(38,50,74,.12);transform:translateY(-2px)}
+  .card .kicker{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+  .card h3{font-size:1.12rem;margin:6px 0 10px;color:var(--ink)}
+  .card p{font-size:.94rem;color:var(--muted);flex-grow:1}
+  .card .metric{margin-top:14px;font-weight:600;color:var(--slate-dark);font-size:.93rem}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .tags span{background:var(--slate-soft);color:var(--slate);font-size:.76rem;font-weight:500;padding:3px 9px;border-radius:999px}
+  .card a.more{margin-top:16px;font-size:.88rem;font-weight:600;color:var(--slate);text-decoration:none}
+  .card a.more:hover{text-decoration:underline}
+
+  /* Timeline */
+  .timeline{border-left:2px solid var(--silver);padding-left:24px}
+  .role{position:relative;margin-bottom:28px}
+  .role::before{content:"";position:absolute;left:-31px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--slate);border:2px solid var(--silver-light)}
+  .role h3{font-size:1.02rem}
+  .role .meta{font-size:.88rem;color:var(--muted);margin-bottom:6px}
+  .role p{font-size:.94rem;color:var(--muted);max-width:760px}
+
+  /* Skills */
+  .skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+  .skills div{background:var(--white);border:1px solid var(--silver);border-radius:12px;padding:18px}
+  .skills h4{font-size:.9rem;color:var(--slate);margin-bottom:6px}
+  .skills p{font-size:.9rem;color:var(--muted)}
+
+  footer{margin-top:72px;padding:36px 0;border-top:1px solid var(--silver);color:var(--muted);font-size:.9rem}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  footer a{color:var(--slate);text-decoration:none;font-weight:500;margin-left:18px}
+
+  @media (max-width:760px){
+    nav ul{display:none}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    footer a{margin:0 18px 0 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Abhigna Akkipeddi</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Abhigna Sharma Akkipeddi</h1>
+    <div class="tag">Data Scientist &middot; Forecasting, Machine Learning &amp; Generative AI</div>
+    <p class="summary">Six years at D.E. Shaw building forecasting models, data pipelines, and AI-driven market intelligence for a global hedge fund. Now completing an MS in Business Analytics at UC San Diego (Dec 2026), focused on machine learning and applied GenAI.</p>
+    <div class="actions">
+      <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+      <a class="btn ghost" href="https://linkedin.com/in/abhignaakki" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/akkipeddiabhigna-star" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="mailto:abhignaakk14@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>80%</b><span>out-of-sample accuracy on trade-flow forecasts</span></div>
+    <div class="stat"><b>~$96.7K</b><span>annual analyst labor saved by an agentic AI pipeline</span></div>
+    <div class="stat"><b>75%</b><span>faster newsletter production after Signal AI rollout</span></div>
+    <div class="stat"><b>1M</b><span>subscribers modeled for churn and lifetime value</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="projects">
+    <h2>Selected Projects</h2>
+    <p class="lede">Applied machine learning and GenAI work, from investment research to customer analytics.</p>
+    <div class="grid">
+
+      <article class="card">
+        <div class="kicker">Capstone &middot; Gramercy Investments</div>
+        <h3>AI Early-Warning Index for EM Sovereign Bonds</h3>
+        <p>Agentic LLM pipeline that automates sovereign research across 6 countries, plus a 64-metric evaluation framework that scores and validates AI-generated research against published EM consensus views.</p>
+        <div class="metric">~$96.7K/yr analyst labor saved &middot; 95%+ data coverage</div>
+        <div class="tags"><span>Python</span><span>LLMs</span><span>Agentic AI</span><span>Evaluation</span></div>
+        <!-- Replace href with the project repo or write-up when ready -->
+        <a class="more" href="https://github.com/akkipeddiabhigna-star" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </article>
+
+      <article class="card">
+        <div class="kicker">GenAI &middot; RAG</div>
+        <h3>Customer Segment Insight Engine</h3>
+        <p>K-Means segmentation of 8,950 credit card holders into 4 behavioral archetypes, a FAISS knowledge base for retrieval, and Claude API campaign recommendations per segment, served in a Streamlit app.</p>
+        <div class="metric">4 segments &middot; live recommendations</div>
+        <div class="tags"><span>scikit-learn</span><span>FAISS</span><span>Claude API</span><span>Streamlit</span></div>
+        <a class="more" href="https://github.com/akkipeddiabhigna-star/customer-segment-insight-engine" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </article>
+
+      <article class="card">
+        <div class="kicker">AI Automation</div>
+        <h3>Gymshark Influencer Workflow</h3>
+        <p>End-to-end AI-automated workflow on the Claude API covering creator sourcing, scoring, outreach drafting, and campaign performance analytics.</p>
+        <div class="metric">53% less time per creator</div>
+        <div class="tags"><span>Python</span><span>Claude API</span><span>Automation</span></div>
+        <a class="more" href="https://github.com/akkipeddiabhigna-star" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </article>
+
+      <article class="card">
+        <div class="kicker">Machine Learning</div>
+        <h3>Customer Churn &amp; Lifetime Value</h3>
+        <p>Churn prediction across a 1M-subscriber base with MLP, XGBoost, and Random Forest, translated into KPI-aligned retention strategies.</p>
+        <div class="metric">AUC 0.75+ &middot; SGD 14M+ projected CLV gain</div>
+        <div class="tags"><span>XGBoost</span><span>Random Forest</span><span>MLP</span></div>
+        <a class="more" href="https://github.com/akkipeddiabhigna-star" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </article>
+
+      <article class="card">
+        <div class="kicker">Experimentation</div>
+        <h3>Push Notification Targeting &amp; A/B Testing</h3>
+        <p>Segmented 500K+ users by engagement and ran A/B tests against control groups to compare notification strategies, backed by predictive targeting models.</p>
+        <div class="metric">15&ndash;20% fewer unsubscribes</div>
+        <div class="tags"><span>A/B Testing</span><span>Segmentation</span><span>Python</span></div>
+        <a class="more" href="https://github.com/akkipeddiabhigna-star" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="lede">Hedge fund research, forecasting, and analytics, followed by graduate work in ML and GenAI.</p>
+    <div class="timeline">
+      <div class="role">
+        <h3>AI Engineer (Capstone) &middot; Gramercy Investments</h3>
+        <div class="meta">Remote, USA &middot; Apr 2026 &ndash; Jun 2026</div>
+        <p>Built an AI-driven early-warning index and agentic research pipeline for an emerging-markets investment fund.</p>
+      </div>
+      <div class="role">
+        <h3>Senior Data Scientist, Quantitative Research &amp; Forecasting &middot; D.E. Shaw India</h3>
+        <div class="meta">Hyderabad, India &middot; Jul 2020 &ndash; Oct 2022</div>
+        <p>Time-series and regression forecasting of global trade flows (80% out-of-sample accuracy), a ~97%-accurate Singapore exchange-rate model, and Python/SQL pipelines that cut reporting cycle time 40%.</p>
+      </div>
+      <div class="role">
+        <h3>Data Analyst, Market Intelligence &amp; Data Analytics &middot; D.E. Shaw India</h3>
+        <div class="meta">Hyderabad, India &middot; Aug 2018 &ndash; Jul 2020</div>
+        <p>NLP sentiment pipeline over 10,000+ articles (40 to 6 hrs/month) and the Signal AI rollout that made newsletter production 75% faster.</p>
+      </div>
+      <div class="role">
+        <h3>Financial Associate, Strategic Financial Analysis &middot; D.E. Shaw India</h3>
+        <div class="meta">Hyderabad, India &middot; Apr 2016 &ndash; Jul 2018</div>
+        <p>Financial statement modeling for 40+ companies weekly and automation that saved ~$3,000 a year.</p>
+      </div>
+      <div class="role">
+        <h3>MS Business Analytics &middot; UC San Diego, Rady School of Management</h3>
+        <div class="meta">San Diego, CA &middot; Expected Dec 2026</div>
+        <p>Machine Learning, Predictive Modeling, Customer Analytics, GenAI for Business.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="lede">Tools I use day to day.</p>
+    <div class="skills">
+      <div><h4>Languages &amp; ML</h4><p>Python (pandas, NumPy, scikit-learn, XGBoost, TensorFlow), SQL, PySpark</p></div>
+      <div><h4>Statistics</h4><p>A/B testing, causal inference, time-series forecasting, backtesting, hypothesis testing</p></div>
+      <div><h4>GenAI &amp; NLP</h4><p>LLMs, RAG, agentic AI, Claude API, FastAPI, sentiment analysis</p></div>
+      <div><h4>Data &amp; BI</h4><p>Snowflake, ETL pipelines, Power BI, Tableau, Excel</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Abhigna Sharma Akkipeddi</span>
+    <span>
+      <a href="https://linkedin.com/in/abhignaakki" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/akkipeddiabhigna-star" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:abhignaakk14@gmail.com">Email</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
